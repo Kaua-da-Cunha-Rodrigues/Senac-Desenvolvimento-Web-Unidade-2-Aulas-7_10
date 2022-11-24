@@ -1,0 +1,105 @@
+#total{
+    width: 95%;
+    max-width: 980px; /*largura máxima*/
+    height: auto;
+    margin: auto;
+}
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header#topo{
+    width: 100%;
+    height: auto;
+    float: left;
+}
+#logo{
+    text-align: center;
+    margin-bottom: 5px;
+}
+nav#menu{
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    float: left;
+    text-align: center;
+    border-radius: 6px;
+    margin-bottom: 5px;
+}
+nav#menu a{
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 20px;
+    line-height: 40px; /*Ele centraliza os itens no meio da tela. O valor é 40 por que o nav#menu é 40 de altura*/
+}
+nav#menu a:hover{
+    text-decoration: underline;
+}
+#banner img{
+    width: 100%;
+    height: auto;
+}
+footer#rodape{
+    width: 100%;
+    height: 30px;
+    background-color: blanchedalmond;
+    line-height: 30px;
+    float: left;
+    text-align: center;
+}
+article#conteudo{
+    width: 60%;
+    float: left;
+}
+aside#conteudo2{
+    width: 35%;
+    float: right;
+}
+#anunciotablet{
+    width: 100%;
+    float: left;
+    background-color: aquamarine;
+    text-align: center;
+    color: white;
+    padding: 5px 0;
+    display: none; /*oculta*/
+}
+@media screen and (min-width:668px) and (max-width:768px) {
+    #anunciotablet{
+        display: block; /*mostra*/
+    }
+} /*o media screen faz com que esse anuncio só apareça em dispositivos entre 668 e 768px de tela 
+    nesse caso só aparece em tablet*/
+@media screen and (max-width:567px) {
+    nav#menu{
+        height: auto;
+    }
+    nav#menu a{
+        display: block;
+        border-bottom: 1px solid #CCC;
+        width: auto;
+    } /*Faz aparecer uma linha abaixo para dividir os tópicos*/
+    nav#menu a:last-child{
+        border: none;
+    } /*last-child escolhe um "filho", que no caso é o último. Ai no caso ele tira a borda de baixo*/
+    #logo, #logo img{
+        width: 100px;
+        height: auto;
+        margin: auto;
+    } /*Diminui o tamanho da logo*/
+/*em dispositivos maiores que 567 o menu não aparecia inteiro. Fazendo isso quando o site for aberto 
+  em dispositivos menores que 567 altura se adapta automaticamente*/    
+} 
+@media screen and (max-width:520px) {
+    article#conteudo{
+        width: 100%;
+    }
+    aside#conteudo2{
+        width: 100%;
+        float: left;
+    } /*Faz com que cada conteúdo preencha uma única coluna*/ 
+    #banner{
+        display: none;
+    }  /*Retira a imagem de banner em dispositivos menores que 520px*/
+} 
+
